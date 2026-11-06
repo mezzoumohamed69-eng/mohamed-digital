@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Digital</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f8ff;color:#172b4d;font-family:Arial,sans-serif}
+header{background:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:bold;color:#1769e0}
+button{background:#1769e0;color:white;border:0;padding:13px 22px;border-radius:10px;font-size:16px}
+.hero{text-align:center;padding:80px 20px}
+h1{color:#1769e0;font-size:38px}
+p{color:#64748b;line-height:1.9;font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:20px 7% 70px}
+.card{background:white;padding:25px;border-radius:16px;box-shadow:0 4px 18px #dce6f5}
+.card h2{color:#1769e0}
+footer{text-align:center;padding:25px;background:white}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Mohamed Digital</div>
+<button onclick="changeLang()" id="lang">English</button>
+</header>
+<section class="hero">
+<h1 id="title">مرحباً بك في Mohamed Digital</h1>
+<p id="desc">منصتك لإنشاء وإدارة بطاقات الأعمال الرقمية بسهولة واحترافية.</p>
+<button id="start">اكتشف خدماتنا</button>
+</section>
+<section class="cards">
+<div class="card">
+<h2 id="h1">بطاقات رقمية</h2>
+<p id="p1">أنشئ بطاقة أعمال رقمية خاصة بك.</p>
+</div>
+<div class="card">
+<h2>QR Code</h2>
+<p id="p2">شارك بطاقتك بسهولة مع الآخرين.</p>
+</div>
+<div class="card">
+<h2>NFC</h2>
+<p id="p3">شارك بياناتك بلمسة واحدة.</p>
+</div>
+</section>
+<footer>© 2026 Mohamed Digital</footer>
+<script>
+let en=false;
+function changeLang(){
+en=!en;
+document.documentElement.lang=en?'en':'ar';
+document.documentElement.dir=en?'ltr':'rtl';
+document.getElementById('lang').textContent=en?'العربية':'English';
+const t={
+title:['مرحباً بك في Mohamed Digital','Welcome to Mohamed Digital'],
+desc:['منصتك لإنشاء وإدارة بطاقات الأعمال الرقمية بسهولة واحترافية.','Your platform to create and manage digital business cards professionally.'],
+start:['اكتشف خدماتنا','Explore our services'],
+h1:['بطاقات رقمية','Digital Cards'],
+p1:['أنشئ بطاقة أعمال رقمية خاصة بك.','Create your own digital business card.'],
+p2:['شارك بطاقتك بسهولة مع الآخرين.','Share your card easily with others.'],
+p3:['شارك بياناتك بلمسة واحدة.','Share your information with one touch.']
+};
+for(const id in t)document.getElementById(id).textContent=t[id][en?1:0];
+}
+</script>
+</body>
+</html>
